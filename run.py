@@ -33,14 +33,15 @@ if __name__ == '__main__':
         goal_hour, goal_minute = int(sys.argv[1]), int(sys.argv[2])
 
     touched_day = 0
+    touched_day_log = 0
     while True:
         current_day = datetime.datetime.now().day
         if touched_day != current_day:
-            touched_day = current_day
-
             executed, ret = run_if_the_time(goal_hour, goal_minute)
             if executed:
                 print(f'{cur_isostring()} : {ret}')
-            else:
-                print(f'{cur_isostring()} : not this time')
+                touched_day = current_day
+            elif touched_day_log != current_day:
+                print(f'{cur_isostring()} : Not this time')
+            touched_day_log = current_day
         time.sleep(30)
