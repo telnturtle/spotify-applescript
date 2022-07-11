@@ -20,6 +20,8 @@ python3 ~/git/spotify-applescript/run.py 20 30
 
 Above example sets 8:30 PM. 
 
+You can also use `once.py`.
+
 ### Terminal Output
 
 ```
@@ -35,7 +37,9 @@ Above example sets 8:30 PM.
 2022-04-17T21:35:53 : Not this time
 ```
 
-Logs one line each day. You can see the next log at the next day.
+`run.py ` logs one line each day. You can see the next log at the next day.
+
+`once.py` executes the command once then be terminated.
 
 ### The AppleScript
 
